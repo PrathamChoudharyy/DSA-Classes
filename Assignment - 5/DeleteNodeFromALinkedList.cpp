@@ -82,11 +82,15 @@ SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* llist, int position) {
     {
         return llist;
     }
-    
+    if(position == 0)
+    {
+        return llist->next;
+    }
     for(int i=1 ; i<position ; i++)
     {
         temp = temp->next;
     }
+    
     temp->next = temp->next->next;
     return llist;
 }
